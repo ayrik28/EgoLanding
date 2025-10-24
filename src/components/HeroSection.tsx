@@ -44,7 +44,7 @@ export function HeroSection() {
               isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-96 opacity-100 scale-100'
             }`}
           >
-            <div className="relative mx-auto -translate-x-8">
+            <div className="relative mx-auto -translate-x-24">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full blur-2xl animate-pulse opacity-0 transition-opacity duration-[900ms]"
                 style={{
                   background: 'radial-gradient(circle, rgba(147,197,253,0.6) 0%, rgba(59,130,246,0.4) 30%, rgba(99,102,241,0.3) 60%, transparent 100%)',
