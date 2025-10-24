@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Iphone16Pro } from './ui/Iphone16Pro';
+import { HeroTextSection } from './HeroTextSection';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -74,6 +75,8 @@ export function HeroSection() {
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-red-100 to-gray-300 dark:from-black dark:via-gray-950 dark:to-black backdrop-blur-sm" />
       
+      {/* Hero Text Section */}
+      <HeroTextSection />
 
       <div className={`relative z-10 flex flex-col items-center justify-center transform transition-all duration-1500 ease-out ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-32 opacity-0'
