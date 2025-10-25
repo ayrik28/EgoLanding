@@ -76,23 +76,23 @@ export function HeroSection() {
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-200 via-red-100 to-gray-300 dark:from-black dark:via-gray-950 dark:to-black">
       {/* Full background coverage */}
       <div className="absolute inset-0 z-0 w-full h-full min-h-screen">
-        {/* Fallback background */}
-        <div className="absolute inset-0 w-full h-full min-h-screen bg-gradient-to-br from-gray-200 via-red-100 to-gray-300 dark:from-black dark:via-gray-950 dark:to-black" />
+        {/* Fallback background with conditional blur */}
+        <div className={`absolute inset-0 w-full h-full min-h-screen bg-gradient-to-br from-gray-200 via-red-100 to-gray-300 dark:from-black dark:via-gray-950 dark:to-black ${theme === 'light' ? 'backdrop-blur-lg' : ''}`} />
         
         <InteractiveGridBackground
-          gridSize={40}
+          gridSize={50}
           gridColor="#d1d5db"
           darkGridColor="#1f2937"
-          effectColor="rgba(0,255,255,0.5)"
-          darkEffectColor="rgba(255,0,255,0.5)"
-          trailLength={5}
+          effectColor="rgba(0,255,255,0.3)"
+          darkEffectColor="rgba(156, 12, 43, 0.45)"
+          trailLength={3}
           glow
-          glowRadius={30}
+          glowRadius={20}
           showFade
           fadeIntensity={25}
-          idleSpeed={0.2}
-          idleRandomCount={5}
-          className="w-full h-full min-h-screen"
+          idleSpeed={0.01}
+          idleRandomCount={2}
+          className={`w-full h-full min-h-screen ${theme === 'light' ? 'backdrop-blur-lg' : ''}`}
         />
       </div>
       

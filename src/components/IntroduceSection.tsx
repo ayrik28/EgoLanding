@@ -1,30 +1,24 @@
-import { Cpu, Zap, Shield, Sparkles } from 'lucide-react';
+import { Brain, Heart, Target } from 'lucide-react';
 
 export function IntroduceSection() {
   const features = [
     {
-      icon: Cpu,
-      title: 'A18 Pro Chip',
-      description: 'Revolutionary performance with next-generation processing power that handles everything effortlessly.',
+      icon: Brain,
+      title: 'AI-Powered Coaching',
+      description: 'Personalized guidance powered by advanced artificial intelligence that understands your unique journey and adapts to your needs.',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Experience unprecedented speed with our advanced technology that keeps you ahead of the curve.',
-      gradient: 'from-amber-500 to-orange-500'
+      icon: Heart,
+      title: 'Emotional Intelligence',
+      description: 'Deep emotional understanding that helps you navigate life\'s challenges with empathy, wisdom, and genuine care for your wellbeing.',
+      gradient: 'from-rose-500 to-pink-500'
     },
     {
-      icon: Shield,
-      title: 'Secure by Design',
-      description: 'Built with privacy at its core, protecting your data with industry-leading security features.',
+      icon: Target,
+      title: 'Goal Achievement',
+      description: 'Structured approach to personal growth with clear milestones, actionable insights, and measurable progress toward your dreams.',
       gradient: 'from-emerald-500 to-teal-500'
-    },
-    {
-      icon: Sparkles,
-      title: 'Stunning Display',
-      description: 'Immerse yourself in brilliant colors and crystal-clear clarity that brings content to life.',
-      gradient: 'from-purple-500 to-pink-500'
     }
   ];
 
@@ -35,14 +29,14 @@ export function IntroduceSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent">
-            Innovation Meets Excellence
+            Your Personal Growth Journey
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Discover the features that make this device extraordinary
+            Discover the three pillars that make EGO your perfect companion for personal development
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
