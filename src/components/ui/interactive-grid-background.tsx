@@ -103,7 +103,7 @@ const InteractiveGridBackground: React.FC<InteractiveGridBackgroundProps> = ({
     if (!ctx) return;
 
     const canvasWidth = width || window.innerWidth;
-    const canvasHeight = height || window.innerHeight;
+    const canvasHeight = height || Math.max(window.innerHeight, document.documentElement.scrollHeight);
     canvas.width = canvasWidth;
     canvas.height = canvasHeight;
 
@@ -211,7 +211,15 @@ const InteractiveGridBackground: React.FC<InteractiveGridBackgroundProps> = ({
     <div
       ref={containerRef}
       className={`relative ${className}`}
-      style={{ width: width || "100vw", height: height || "100vh" }}
+      style={{ 
+        width: width || "100%", 
+        height: height || "100%",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
+      }}
       {...props}
     >
       <canvas
