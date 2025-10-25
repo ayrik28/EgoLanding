@@ -84,7 +84,7 @@ export function HeroSection() {
           gridColor="#d1d5db"
           darkGridColor="#1f2937"
           effectColor="rgba(0,255,255,0.3)"
-          darkEffectColor="rgba(156, 12, 43, 0.45)"
+          darkEffectColor="rgba(215, 33, 72, 0.45)"
           trailLength={3}
           glow
           glowRadius={20}
