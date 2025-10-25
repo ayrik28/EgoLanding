@@ -3,7 +3,8 @@ import Globe from './lightswind/globe';
 import TextScrollMarquee from './ui/TextScrollMarquee';
 import BeamCircle from './ui/beam-circle';
 import { ScrollReveal } from './ui/scroll-reveal';
-import { Zap } from 'lucide-react';
+import CodeHoverCards from './ui/code-hover-cards';
+import { Zap, Heart, Brain, Target, Users, Sparkles } from 'lucide-react';
 
 export function IntroSection() {
   const { language } = useLanguage();
@@ -15,11 +16,13 @@ export function IntroSection() {
       marqueeText: "🌟 مشکل عادات جدید - چرا اپلیکیشن‌ها کافی نیستند؟ 🌟",
       solutionTitle: "راه حل ایگو",
       solutionDescription: "یادت می‌ره ورزش کنی؟ کتاب بخونی؟ یا یک مهارت جدید یاد بگیری؟ ما توی ایگو باور می‌کنیم که مشکل، اراده نیست، مشکل روش است!",
-      solution: [
-        "اول، هر هدف بزرگی را به عادت‌های کوچک و روزانه تبدیل می‌کنیم.",
-        "بعد، «کوچ هوشمند» ما میاد کنارت می‌شینه و مثل یک دوست آگاه، پیشرفتت را دنبال می‌کند و تو راه نگت می‌دارد.",
-        "قبل از اینکه حتی بفهمی، آن کار جدید، جزئی از زندگیت شده! در واقع ایگو کمک می‌کند تا به بهترین نسخهٔ خودت تبدیل بشی."
-      ]
+        solution: [
+          "اول، هر هدف بزرگی را به عادت‌های کوچک و روزانه تبدیل می‌کنیم.",
+          "بعد، «کوچ هوشمند» ما میاد کنارت می‌شینه و مثل یک دوست آگاه، پیشرفتت را دنبال می‌کند و تو راه نگت می‌دارد.",
+          "قبل از اینکه حتی بفهمی، آن کار جدید، جزئی از زندگیت شده! در واقع ایگو کمک می‌کند تا به بهترین نسخهٔ خودت تبدیل بشی."
+        ],
+        coachTitle: "کوچ ایگو چطور تو مسیر، پشتت رو داره؟",
+        coachDescription: "فکر کن یه روز بی‌حوصله باشی... درست همون موقع، یه پیام ساده از کوچمون می‌رسی که می‌گه: \"حتی پنج دقیقه هم کافیه، تو می‌تونی!\" یا وقتی چند روز پشت هم روال عادتت رو فراموش کردی... به جاش که دعوات کنه، یه پیشنهاد ساده و جدید برات می‌فرسته تا دوباره با انرژی شروع کنی. کوچ ایگو مثل سایه، کنارت می‌مونه. مشکلاتت رو درک می‌کنه و بر اساس اونچه خودت انجام می‌دی، راهنماییت می‌کنه تا در نهایت، مسیر رشدت رو خودت به راحتی طی کنی."
     },
     en: {
       title: "The New Habits Problem",
@@ -27,11 +30,13 @@ export function IntroSection() {
       marqueeText: "🌟 The New Habits Problem - Why Apps Aren't Enough? 🌟",
       solutionTitle: "EGO's Solution",
       solutionDescription: "Do you forget to exercise? Read books? Or learn a new skill? We at EGO believe that the problem is not willpower, it's the method!",
-      solution: [
-        "First, we transform every big goal into small daily habits.",
-        "Then, our 'Smart Coach' comes and sits beside you, like an aware friend, tracking your progress and guiding you on the path.",
-        "Before you even realize it, that new activity has become part of your life! In fact, EGO helps you become the best version of yourself."
-      ]
+        solution: [
+          "First, we transform every big goal into small daily habits.",
+          "Then, our 'Smart Coach' comes and sits beside you, like an aware friend, tracking your progress and guiding you on the path.",
+          "Before you even realize it, that new activity has become part of your life! In fact, EGO helps you become the best version of yourself."
+        ],
+        coachTitle: "How does EGO coach support you on your journey?",
+        coachDescription: "Imagine you're having a low-energy day... Right at that moment, you receive a simple message from our coach saying: \"Even five minutes is enough, you can do it!\" Or when you've forgotten your habit routine for several days in a row... Instead of scolding you, it sends you a simple and new suggestion to start again with energy. EGO coach stays by your side like a shadow. It understands your problems and guides you based on what you do, so that in the end, you can easily follow your growth path yourself."
     }
   };
 
@@ -148,14 +153,66 @@ export function IntroSection() {
           </div>
         </div>
 
-        {/* Right side - BeamCircle component */}
-        <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
-          <BeamCircle
-            size={400}
-            centerIcon={<Zap className="text-yellow-400" size={40} />}
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
+            {/* Right side - BeamCircle component */}
+            <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
+              <BeamCircle
+                size={400}
+                centerIcon={<Zap className="text-yellow-400" size={40} />}
+              />
+            </div>
+          </div>
+
+          {/* Third part - Coach Support with CodeHoverCards */}
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-16">
+            {/* Left side - CodeHoverCards component */}
+            <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
+              <CodeHoverCards
+                cards={[
+                  { id: '1', icon: Heart, title: 'Emotional Support', description: 'Understanding your feelings' },
+                  { id: '2', icon: Brain, title: 'Smart Guidance', description: 'AI-powered coaching' },
+                  { id: '3', icon: Target, title: 'Goal Tracking', description: 'Progress monitoring' },
+                  { id: '4', icon: Users, title: 'Community', description: 'Support network' },
+                  { id: '5', icon: Sparkles, title: 'Motivation', description: 'Daily encouragement' },
+                  { id: '6', icon: Zap, title: 'Energy Boost', description: 'Quick motivation' }
+                ]}
+                columns={2}
+                cardGap="0.5rem"
+                iconSize={32}
+                maskRadius={200}
+                characterCount={1000}
+                borderRadius={16}
+                minHeight={120}
+                className="w-full h-full"
+                cardClassName="bg-white/5 dark:bg-white/5 backdrop-blur-xl border border-white/10"
+              />
+            </div>
+
+            {/* Right side - Coach text content */}
+            <div className={`space-y-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', direction: language === 'fa' ? 'rtl' : 'ltr' }}>
+                  {currentContent.coachTitle}
+                </h2>
+                
+                <div className={`max-w-2xl ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+                  <ScrollReveal
+                    size="lg"
+                    align={language === 'fa' ? 'right' : 'left'}
+                    variant="secondary"
+                    enableBlur={true}
+                    baseOpacity={0.1}
+                    baseRotation={2}
+                    blurStrength={3}
+                    staggerDelay={0.1}
+                  >
+                    <p className="text-lg text-gray-300 leading-relaxed">
+                      {currentContent.coachDescription}
+                    </p>
+                  </ScrollReveal>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
