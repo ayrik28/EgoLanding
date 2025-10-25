@@ -18,28 +18,32 @@ export function HeroTextSection() {
   const currentContent = content[language];
 
   return (
-    <div className={`absolute top-1/3 right-24 -translate-y-1/2 z-20 flex flex-col space-y-4 ${language === 'fa' ? 'items-end' : 'items-start'}`}>
-      <div className={language === 'fa' ? 'text-right' : 'text-left'}>
-        <ShinyText 
-          size="4xl" 
-          weight="bold"
-          baseColor="rgba(255, 255, 255, 0.3)"
-          shineColor="rgba(255, 255, 255, 0.9)"
-          speed={2}
-          direction="left-to-right"
-          intensity={0.8}
-          shineWidth={25}
-          pauseOnHover={true}
-          gradientType="linear"
-        >
-          {currentContent.title}
-        </ShinyText>
-      </div>
-      
-      <div className={`max-w-sm ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-        <p className="text-white/90 text-lg font-medium leading-relaxed">
-          {currentContent.description}
-        </p>
+    <div className={`absolute top-1/3 right-24 -translate-y-1/2 z-20 ${language === 'fa' ? 'items-end' : 'items-start'}`}>
+      <div className="bg-black/40 backdrop-blur-xl rounded-2xl p-8 border border-white/10 shadow-2xl">
+        <div className="flex flex-col space-y-6">
+          <div className={language === 'fa' ? 'text-right' : 'text-left'}>
+            <ShinyText 
+              size="4xl" 
+              weight="bold"
+              baseColor="rgba(255, 255, 255, 0.3)"
+              shineColor="rgba(255, 255, 255, 0.9)"
+              speed={2}
+              direction="left-to-right"
+              intensity={0.8}
+              shineWidth={25}
+              pauseOnHover={true}
+              gradientType="linear"
+            >
+              {currentContent.title}
+            </ShinyText>
+          </div>
+          
+          <div className={`max-w-sm ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+            <p className="text-white/90 text-lg font-medium leading-relaxed">
+              {currentContent.description}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Iphone16Pro } from './ui/Iphone16Pro';
 import { HeroTextSection } from './HeroTextSection';
-import { InteractiveGridBackground } from './ui/interactive-grid-background';
+import InteractiveGridBackground from './ui/interactive-grid-background';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -75,11 +75,8 @@ export function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
       <div className="absolute inset-0 z-0">
-        {/* Fallback background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-red-100 to-gray-300 dark:from-black dark:via-gray-950 dark:to-black" />
-        
         <InteractiveGridBackground
-          gridSize={30}
+          gridSize={40}
           gridColor="#d1d5db"
           darkGridColor="#1f2937"
           effectColor="rgba(0,255,255,0.5)"
@@ -89,6 +86,8 @@ export function HeroSection() {
           glowRadius={30}
           showFade
           fadeIntensity={25}
+          idleSpeed={0.2}
+          idleRandomCount={5}
           className="w-full h-full"
         />
       </div>
