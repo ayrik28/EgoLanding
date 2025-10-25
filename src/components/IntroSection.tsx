@@ -96,7 +96,7 @@ export function IntroSection() {
       </div>
 
       {/* Second part - Solution with BeamCircle */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-16">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-8">
         {/* Left side - Text content */}
         <div className={`space-y-8 ml-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
           <div className="space-y-6">
