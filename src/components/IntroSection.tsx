@@ -2,6 +2,7 @@ import { useLanguage } from '../context/LanguageContext';
 import Globe from './lightswind/globe';
 import TextScrollMarquee from './ui/TextScrollMarquee';
 import BeamCircle from './ui/beam-circle';
+import { ScrollReveal } from './ui/scroll-reveal';
 import { Zap } from 'lucide-react';
 
 export function IntroSection() {
@@ -74,11 +75,22 @@ export function IntroSection() {
               {currentContent.title}
             </h2>
             
-            <div className={`max-w-2xl ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                {currentContent.description}
-              </p>
-            </div>
+             <div className={`max-w-2xl ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+               <ScrollReveal
+                 size="lg"
+                 align={language === 'fa' ? 'right' : 'left'}
+                 variant="secondary"
+                 enableBlur={true}
+                 baseOpacity={0.1}
+                 baseRotation={2}
+                 blurStrength={3}
+                 staggerDelay={0.1}
+               >
+                 <p className="text-lg text-gray-300 leading-relaxed">
+                   {currentContent.description}
+                 </p>
+               </ScrollReveal>
+             </div>
           </div>
         </div>
       </div>
@@ -92,24 +104,47 @@ export function IntroSection() {
               {currentContent.solutionTitle}
             </h2>
             
-            <div className={`max-w-2xl ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                {currentContent.solutionDescription}
-              </p>
-              
-              <div className="space-y-4">
-                {currentContent.solution.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                      {index + 1}
-                    </div>
-                    <p className="text-gray-300 leading-relaxed">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+             <div className={`max-w-2xl ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+               <ScrollReveal
+                 size="lg"
+                 align={language === 'fa' ? 'right' : 'left'}
+                 variant="secondary"
+                 enableBlur={true}
+                 baseOpacity={0.1}
+                 baseRotation={2}
+                 blurStrength={3}
+                 staggerDelay={0.1}
+               >
+                 <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                   {currentContent.solutionDescription}
+                 </p>
+               </ScrollReveal>
+               
+               <div className="space-y-4">
+                 {currentContent.solution.map((item, index) => (
+                   <ScrollReveal
+                     key={index}
+                     size="md"
+                     align={language === 'fa' ? 'right' : 'left'}
+                     variant="secondary"
+                     enableBlur={true}
+                     baseOpacity={0.1}
+                     baseRotation={1}
+                     blurStrength={2}
+                     staggerDelay={index * 0.1}
+                   >
+                     <div className="flex items-start space-x-3">
+                       <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                         {index + 1}
+                       </div>
+                       <p className="text-gray-300 leading-relaxed">
+                         {item}
+                       </p>
+                     </div>
+                   </ScrollReveal>
+                 ))}
+               </div>
+             </div>
           </div>
         </div>
 
