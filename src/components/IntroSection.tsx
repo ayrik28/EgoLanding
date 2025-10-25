@@ -14,7 +14,7 @@ export function IntroSection() {
       description: "بسیاری از ما برای ساختن عادات جدید به اپلیکیشنها پناه میبریم، اما اغلب پس از مدتی، انگیزهٔ خود را از دست داده و آن عادت به فراموشی سپرده میشود. ریشهٔ این مشکل چیست؟ نبود یک حامی و مربی که پیشرفت ما را پیگیری کند، با ما گفتگو کند و در لحظات سستیراهنماییمان دهد.",
       marqueeText: "🌟 مشکل عادات جدید - چرا اپلیکیشن‌ها کافی نیستند؟ 🌟",
       solutionTitle: "راه حل ایگو",
-      solutionDescription: "یادت می‌ره ورزش کنی؟ کتاب بخونی؟ یا یک مهارت جدید یاد بگیری؟ ما توی ایگو باورتون می‌کنیم که مشکل، اراده نیست، مشکل روش است!",
+      solutionDescription: "یادت می‌ره ورزش کنی؟ کتاب بخونی؟ یا یک مهارت جدید یاد بگیری؟ ما توی ایگو باور می‌کنیم که مشکل، اراده نیست، مشکل روش است!",
       solution: [
         "اول، هر هدف بزرگی را به عادت‌های کوچک و روزانه تبدیل می‌کنیم.",
         "بعد، «کوچ هوشمند» ما میاد کنارت می‌شینه و مثل یک دوست آگاه، پیشرفتت را دنبال می‌کند و تو راه نگت می‌دارد.",
@@ -71,7 +71,7 @@ export function IntroSection() {
         {/* Right side - Text content */}
         <div className={`space-y-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', direction: language === 'fa' ? 'rtl' : 'ltr' }}>
               {currentContent.title}
             </h2>
             
@@ -100,7 +100,7 @@ export function IntroSection() {
         {/* Left side - Text content */}
         <div className={`space-y-8 ml-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', direction: 'rtl' }}>
               {currentContent.solutionTitle}
             </h2>
             
