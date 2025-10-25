@@ -25,7 +25,7 @@ export function IntroSection() {
       {/* Header with TextScrollMarquee */}
       <div className="w-full mb-16">
         <TextScrollMarquee
-          baseVelocity={1}
+          baseVelocity={0.01}
           direction="left"
           className="text-3xl font-bold uppercase text-white"
           scrollDependent={false}
