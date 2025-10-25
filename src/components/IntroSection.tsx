@@ -23,7 +23,7 @@ export function IntroSection() {
   return (
     <section className="min-h-screen flex flex-col justify-center py-20 px-4 bg-black">
       {/* Header with TextScrollMarquee */}
-      <div className="w-full mb-16">
+      <div className="w-full mb-16 -mt-32">
         <TextScrollMarquee
           baseVelocity={0.01}
           direction="left"
