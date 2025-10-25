@@ -52,7 +52,7 @@ export function IntroSection() {
       </div>
 
       {/* Main content - New Habits Problem section */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Left side - Globe component */}
         <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
           <Globe
@@ -84,9 +84,9 @@ export function IntroSection() {
       </div>
 
       {/* Second part - Solution with BeamCircle */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-32">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-16">
         {/* Left side - Text content */}
-        <div className={`space-y-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+        <div className={`space-y-8 ml-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
               {currentContent.solutionTitle}
