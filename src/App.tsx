@@ -1,6 +1,7 @@
 import { Header } from './components/Header';
 import { SideNav } from './components/SideNav';
 import { HeroSection } from './components/HeroSection';
+import { IntroSection } from './components/IntroSection';
 import { IntroduceSection } from './components/IntroduceSection';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <SideNav />
       <HeroSection />
+      <IntroSection />
       <IntroduceSection />
     </div>
   );
