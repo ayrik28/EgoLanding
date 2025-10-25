@@ -1,5 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import Globe from './lightswind/globe';
+import TextScrollMarquee from './ui/TextScrollMarquee';
 
 export function IntroSection() {
   const { language } = useLanguage();
@@ -7,18 +8,34 @@ export function IntroSection() {
   const content = {
     fa: {
       title: "مشکل عادات جدید",
-      description: "بسیاری از ما برای ساختن عادات جدید به اپلیکیشنها پناه میبریم، اما اغلب پس از مدتی، انگیزهٔ خود را از دست داده و آن عادت به فراموشی سپرده میشود. ریشهٔ این مشکل چیست؟ نبود یک حامی و مربی که پیشرفت ما را پیگیری کند، با ما گفتگو کند و در لحظات سستیراهنماییمان دهد."
+      description: "بسیاری از ما برای ساختن عادات جدید به اپلیکیشنها پناه میبریم، اما اغلب پس از مدتی، انگیزهٔ خود را از دست داده و آن عادت به فراموشی سپرده میشود. ریشهٔ این مشکل چیست؟ نبود یک حامی و مربی که پیشرفت ما را پیگیری کند، با ما گفتگو کند و در لحظات سستیراهنماییمان دهد.",
+      marqueeText: "🌟 مشکل عادات جدید - چرا اپلیکیشن‌ها کافی نیستند؟ 🌟"
     },
     en: {
       title: "The New Habits Problem",
-      description: "Many of us turn to apps to build new habits, but often after a while, we lose our motivation and that habit is forgotten. What is the root of this problem? The lack of a supporter and coach who tracks our progress, talks to us, and guides us in moments of weakness."
+      description: "Many of us turn to apps to build new habits, but often after a while, we lose our motivation and that habit is forgotten. What is the root of this problem? The lack of a supporter and coach who tracks our progress, talks to us, and guides us in moments of weakness.",
+      marqueeText: "🌟 The New Habits Problem - Why Apps Aren't Enough? 🌟"
     }
   };
 
   const currentContent = content[language];
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 px-4 bg-black">
+    <section className="min-h-screen flex flex-col justify-center py-20 px-4 bg-black">
+      {/* Header with TextScrollMarquee */}
+      <div className="w-full mb-16">
+        <TextScrollMarquee
+          baseVelocity={1}
+          direction="left"
+          className="text-3xl font-bold uppercase text-white"
+          scrollDependent={false}
+          delay={500}
+        >
+          {currentContent.marqueeText}
+        </TextScrollMarquee>
+      </div>
+
+      {/* Main content */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left side - Globe component */}
         <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
