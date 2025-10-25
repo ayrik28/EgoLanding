@@ -20,16 +20,10 @@ export interface ThreeDMarqueeProps {
 export const ThreeDMarquee: React.FC<ThreeDMarqueeProps> = ({
   images,
   className = "",
-  cols = 4,
   onImageClick,
 }) => {
-  // Clone the image list twice
+  // Clone the image list twice for seamless loop
   const duplicatedImages = [...images, ...images];
-
-  const groupSize = Math.ceil(duplicatedImages.length / cols);
-  const imageGroups = Array.from({ length: cols }, (_, index) =>
-    duplicatedImages.slice(index * groupSize, (index + 1) * groupSize)
-  );
 
   const handleImageClick = (image: MarqueeImage, globalIndex: number) => {
     if (onImageClick) {
@@ -51,47 +45,105 @@ export const ThreeDMarquee: React.FC<ThreeDMarqueeProps> = ({
         }}
       >
         <div className="w-full overflow-hidden scale-90 sm:scale-100">
-          <div
-            className={`relative grid h-full w-full origin-center 
-              grid-cols-2 sm:grid-cols-${cols} gap-4 transform 
-              `}
-          >
-            {imageGroups.map((imagesInGroup, idx) => (
-              <motion.div
-                key={`column-${idx}`}
-                animate={{ y: idx % 2 === 0 ? 100 : -100 }}
-                transition={{
-                  duration: idx % 2 === 0 ? 10 : 15,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
-                className="flex flex-col items-center gap-6 relative"
-              >
-                <div className="absolute left-0 top-0 h-full w-0.5 bg-gray-200 dark:bg-gray-700" />
-                {imagesInGroup.map((image, imgIdx) => {
-                  const globalIndex = idx * groupSize + imgIdx;
-                  const isClickable = image.href || onImageClick;
+           <div className="relative h-full w-full origin-center gap-4 transform">
+             {/* First Row */}
+             <div className="flex gap-4 mb-4">
+               {duplicatedImages.slice(0, Math.ceil(duplicatedImages.length / 3)).map((image, idx) => {
+                 const isClickable = image.href || onImageClick;
 
-                  return (
-                    <div key={`img-${imgIdx}`} className="relative">
-                      <div className="absolute top-0 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700" />
-                      <motion.img
-                        whileHover={{ y: -10 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        src={image.src}
-                        alt={image.alt}
-                        width={400}
-                        height={700}
-                        className={`aspect-[400/700] w-full max-w-[180px] rounded-lg object-cover ring ring-gray-300/30 dark:ring-gray-800/50 shadow-xl hover:shadow-2xl transition-shadow duration-300 ${
-                          isClickable ? "cursor-pointer" : ""
-                        }`}
-                        onClick={() => handleImageClick(image, globalIndex)}
-                      />
-                    </div>
-                  );
-                })}
-              </motion.div>
-            ))}
+                 return (
+                   <motion.div
+                     key={`row1-image-${idx}`}
+                     animate={{ x: [0, -100, 0] }}
+                     transition={{
+                       duration: 20,
+                       repeat: Infinity,
+                       ease: "linear",
+                     }}
+                     className="flex-shrink-0 relative"
+                   >
+                     <motion.img
+                       whileHover={{ y: -10 }}
+                       transition={{ duration: 0.3, ease: "easeInOut" }}
+                       src={image.src}
+                       alt={image.alt}
+                       width={400}
+                       height={700}
+                       className={`aspect-[400/700] w-full max-w-[140px] rounded-lg object-cover ring ring-gray-300/30 dark:ring-gray-800/50 shadow-xl hover:shadow-2xl transition-shadow duration-300 ${
+                         isClickable ? "cursor-pointer" : ""
+                       }`}
+                       onClick={() => handleImageClick(image, idx)}
+                     />
+                   </motion.div>
+                 );
+               })}
+             </div>
+
+             {/* Second Row */}
+             <div className="flex gap-4 mb-4">
+               {duplicatedImages.slice(Math.ceil(duplicatedImages.length / 3), Math.ceil(duplicatedImages.length * 2 / 3)).map((image, idx) => {
+                 const isClickable = image.href || onImageClick;
+
+                 return (
+                   <motion.div
+                     key={`row2-image-${idx}`}
+                     animate={{ x: [0, 100, 0] }}
+                     transition={{
+                       duration: 25,
+                       repeat: Infinity,
+                       ease: "linear",
+                     }}
+                     className="flex-shrink-0 relative"
+                   >
+                     <motion.img
+                       whileHover={{ y: -10 }}
+                       transition={{ duration: 0.3, ease: "easeInOut" }}
+                       src={image.src}
+                       alt={image.alt}
+                       width={400}
+                       height={700}
+                       className={`aspect-[400/700] w-full max-w-[140px] rounded-lg object-cover ring ring-gray-300/30 dark:ring-gray-800/50 shadow-xl hover:shadow-2xl transition-shadow duration-300 ${
+                         isClickable ? "cursor-pointer" : ""
+                       }`}
+                       onClick={() => handleImageClick(image, idx + Math.ceil(duplicatedImages.length / 3))}
+                     />
+                   </motion.div>
+                 );
+               })}
+             </div>
+
+             {/* Third Row */}
+             <div className="flex gap-4">
+               {duplicatedImages.slice(Math.ceil(duplicatedImages.length * 2 / 3)).map((image, idx) => {
+                 const isClickable = image.href || onImageClick;
+
+                 return (
+                   <motion.div
+                     key={`row3-image-${idx}`}
+                     animate={{ x: [0, -80, 0] }}
+                     transition={{
+                       duration: 30,
+                       repeat: Infinity,
+                       ease: "linear",
+                     }}
+                     className="flex-shrink-0 relative"
+                   >
+                     <motion.img
+                       whileHover={{ y: -10 }}
+                       transition={{ duration: 0.3, ease: "easeInOut" }}
+                       src={image.src}
+                       alt={image.alt}
+                       width={400}
+                       height={700}
+                       className={`aspect-[400/700] w-full max-w-[140px] rounded-lg object-cover ring ring-gray-300/30 dark:ring-gray-800/50 shadow-xl hover:shadow-2xl transition-shadow duration-300 ${
+                         isClickable ? "cursor-pointer" : ""
+                       }`}
+                       onClick={() => handleImageClick(image, idx + Math.ceil(duplicatedImages.length * 2 / 3))}
+                     />
+                   </motion.div>
+                 );
+               })}
+             </div>
           </div>
         </div>
       </div>

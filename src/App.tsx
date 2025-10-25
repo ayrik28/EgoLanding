@@ -6,7 +6,7 @@ import { IntroduceSection } from './components/IntroduceSection';
 import { ThreeDMarquee, MarqueeImage } from './components/ui/3d-marquee';
 
 function App() {
-  // Gallery images from section3 folder
+  // Gallery images from section3 folder - All 30 images
   const images: MarqueeImage[] = [
     {
       src: "/assets/section3/Screenshot_20251025-194710.jpg",
@@ -83,6 +83,54 @@ function App() {
     {
       src: "/assets/section3/Screenshot_20251025-201446.jpg",
       alt: "EGO App Screenshot 19"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211618.jpg",
+      alt: "EGO App Screenshot 20"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211618 (1).jpg",
+      alt: "EGO App Screenshot 21"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211626.jpg",
+      alt: "EGO App Screenshot 22"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211630.jpg",
+      alt: "EGO App Screenshot 23"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211634.jpg",
+      alt: "EGO App Screenshot 24"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211638.jpg",
+      alt: "EGO App Screenshot 25"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211643.jpg",
+      alt: "EGO App Screenshot 26"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211647.jpg",
+      alt: "EGO App Screenshot 27"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211654.jpg",
+      alt: "EGO App Screenshot 28"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211704.jpg",
+      alt: "EGO App Screenshot 29"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211738.jpg",
+      alt: "EGO App Screenshot 30"
+    },
+    {
+      src: "/assets/section3/Screenshot_20251025-211755.jpg",
+      alt: "EGO App Screenshot 31"
     }
   ];
 
