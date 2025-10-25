@@ -4,7 +4,7 @@ import TextScrollMarquee from './ui/TextScrollMarquee';
 import BeamCircle from './ui/beam-circle';
 import { ScrollReveal } from './ui/scroll-reveal';
 import CodeHoverCards from './ui/code-hover-cards';
-import { Zap, Heart, Brain, Target, Users, Sparkles } from 'lucide-react';
+import { Zap, Brain } from 'lucide-react';
 
 export function IntroSection() {
   const { language } = useLanguage();
@@ -60,7 +60,7 @@ export function IntroSection() {
       {/* Main content - New Habits Problem section */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         {/* Left side - Globe component */}
-        <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
+        <div className="relative h-130 lg:h-[500px] flex items-center justify-center">
           <Globe
             theta={0.25}
             dark={0}
@@ -153,66 +153,62 @@ export function IntroSection() {
           </div>
         </div>
 
-            {/* Right side - BeamCircle component */}
-            <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
-              <BeamCircle
-                size={400}
-                centerIcon={<Zap className="text-yellow-400" size={40} />}
-              />
-            </div>
-          </div>
+         {/* Right side - BeamCircle component */}
+         <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
+           <BeamCircle
+             size={400}
+             centerIcon={<Zap className="text-yellow-400" size={40} />}
+           />
+         </div>
+       </div>
 
-          {/* Third part - Coach Support with CodeHoverCards */}
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-16">
-            {/* Left side - CodeHoverCards component */}
-            <div className="relative h-96 lg:h-[500px] flex items-center justify-center">
-              <CodeHoverCards
-                cards={[
-                  { id: '1', icon: Heart, title: 'Emotional Support', description: 'Understanding your feelings' },
-                  { id: '2', icon: Brain, title: 'Smart Guidance', description: 'AI-powered coaching' },
-                  { id: '3', icon: Target, title: 'Goal Tracking', description: 'Progress monitoring' },
-                  { id: '4', icon: Users, title: 'Community', description: 'Support network' },
-                  { id: '5', icon: Sparkles, title: 'Motivation', description: 'Daily encouragement' },
-                  { id: '6', icon: Zap, title: 'Energy Boost', description: 'Quick motivation' }
-                ]}
-                columns={2}
-                cardGap="0.5rem"
-                iconSize={32}
-                maskRadius={200}
-                characterCount={1000}
-                borderRadius={16}
-                minHeight={120}
-                className="w-full h-full"
-                cardClassName="bg-white/5 dark:bg-white/5 backdrop-blur-xl border border-white/10"
-              />
-            </div>
+       {/* Third part - Coach Support with CodeHoverCards */}
+       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-16">
+         {/* Left side - CodeHoverCards component */}
+         <div className="relative h-64 lg:h-80 flex items-center justify-center">
+           <CodeHoverCards
+             cards={[
+               { id: '1', icon: Brain, }
+             ]}
+             columns={1}
+             cardGap="0.1rem"
+             iconSize={32}
+             maskRadius={70}
+             characterCount={2000}
+             borderRadius={30}
+             minHeight={60}
+             className="w-96 h-36"
+             cardClassName="bg-black/90 dark:bg-black/90 backdrop-blur-sm rounded-lg"
+             characterSet="EGo.eGo.EGo.Hunter>Ego.eGO.Win0123456789@#$%^&*()_+-=[]{}|;:,.<>?/~`"
+           />
+         </div>
 
-            {/* Right side - Coach text content */}
-            <div className={`space-y-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
-              <div className="space-y-6">
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', direction: language === 'fa' ? 'rtl' : 'ltr' }}>
-                  {currentContent.coachTitle}
-                </h2>
-                
-                <div className={`max-w-2xl ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
-                  <ScrollReveal
-                    size="lg"
-                    align={language === 'fa' ? 'right' : 'left'}
-                    variant="secondary"
-                    enableBlur={true}
-                    baseOpacity={0.1}
-                    baseRotation={2}
-                    blurStrength={3}
-                    staggerDelay={0.1}
-                  >
-                    <p className="text-lg text-gray-300 leading-relaxed">
-                      {currentContent.coachDescription}
-                    </p>
-                  </ScrollReveal>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      );
-    }
+         {/* Right side - Coach text content */}
+         <div className={`space-y-8 ${language === 'fa' ? 'text-right' : 'text-left'}`}>
+           <div className="space-y-6">
+             <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent" style={{ fontFamily: 'system-ui, -apple-system, sans-serif', direction: language === 'fa' ? 'rtl' : 'ltr' }}>
+               {currentContent.coachTitle}
+             </h2>
+             
+             <div className={`max-w-2xl ${language === 'fa' ? 'text-right' : 'text-left'}`} dir={language === 'fa' ? 'rtl' : 'ltr'}>
+               <ScrollReveal
+                 size="lg"
+                 align={language === 'fa' ? 'right' : 'left'}
+                 variant="secondary"
+                 enableBlur={true}
+                 baseOpacity={0.1}
+                 baseRotation={2}
+                 blurStrength={3}
+                 staggerDelay={0.1}
+               >
+                 <p className="text-lg text-gray-300 leading-relaxed">
+                   {currentContent.coachDescription}
+                 </p>
+               </ScrollReveal>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+   );
+ }

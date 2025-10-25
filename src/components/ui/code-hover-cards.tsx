@@ -57,7 +57,7 @@ const CodeHoverCards: React.FC<CodeHoverCardsProps> = ({
   cardClassName,
   maskRadius = 300,
   characterCount = 2000,
-  characterSet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+  characterSet = 'egogowinegopower123456789',
   animationDuration = 0.5,
   borderRadius = 26,
   cardGap = '1rem',
